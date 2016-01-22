@@ -1,0 +1,166 @@
+/* fonts */
+/* @import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Sans+Mono|Droid+Serif:400,400italic,700,700italic); */
+
+/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* element defaults */
+html {
+  font-size: 62.5%;
+}
+
+
+/* font candidates: Vollkorn, Lora, 'PT Serif', Georgia, serif */
+body {
+  font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+ font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 3.4rem;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 20px
+}
+
+ul, ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0;
+  margin-left: 45px;
+}
+
+ul li, ol li {
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 8rem;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
+img {
+  display: block;
+}
+
+.unstyled-wrapper {
+  /* do'nt apply any styles here, sometimes empty wrappers are required to please markdown */
+}
+
+a, a:visited {
+  color: #00B36B;
+}
+
+ul {
+  list-style: square;
+  margin-left: 3.2rem;
+}
+
+ul ul {
+  list-style: circle;
+}
+
+
+li {
+  font-size: 2.4rem;
+}
+
+.remark-code {
+  font-family: Menlo, 'Droid Sans Mono', monospace;
+  font-size: 2.4rem;
+}
+
+.remark-inline-code {
+  font-family: Menlo, 'Droid Sans Mono', monospace;
+  color: #284EC8;
+  font-weight: bold;
+}
+
+pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+table td {
+  padding: 0.5rem;
+  font-size: 2.4rem;
+}
+
+table > thead td {
+  font-weight: bold;
+}
+
+table tbody tr:nth-child(odd) {
+  background: #ddd;
+}
+
+iframe {
+  width: 100%;
+  flex-grow: 1;
+}
+
+/* speaker notes */
+.remark-notes-area h1 {
+  font-size: 4rem;
+}
+
+.remark-notes-area h2 {
+  font-size: 3.5rem;
+}
+
+.remark-notes-area h3 {
+  font-size: 3rem;
+}
+
+.remark-notes-area li {
+  font-size: 2.5rem;
+}
+
+.remark-notes-area .remark-code {
+  font-size: 2rem;
+}
+
+.remark-notes-area .grey {
+  color: #ddd;
+  font-size: 2rem;
+}
+
+.remark-notes-area .grey a {
+  color: #ddd;
+}
+.remark-notes-area .grey .remark-inline-code {
+  color: #aaa;
+}
+
+.remark-code-line-highlighted {
+  /* rgb(255, 103, 0) */
+  background-color: rgba(255, 255, 0, 0.8);
+}
+
+.remark-notes-area .remark-bottom-area .remark-notes-preview-area .remark-notes-preview {
+  border-top: 2px solid red;
+}

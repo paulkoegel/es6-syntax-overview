@@ -1,0 +1,23 @@
+ECMAScript 6
+============
+
+#### Start Slideshow
+[https://paulkogel.github.io/es6](https://paulkogel.github.io/es6)
+
+Built with [Remark.js](https://github.com/gnab/remark).
+
+#### [Remark.js](https://github.com/gnab/remark) Keyboard Shortcuts
++ `p` to enter presenter mode (with notes, timer, preview of next slide)
++ `c` to open the presentation in a new synched browser window without presenter notes (drag this to a second screen / projector)
++ `f` to switch to fullscreen mode.
+
+---
+
+#### Good to know
+
+##### Remove image folder from git history
+git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch images' --prune-empty --tag-name-filter cat -- --all
+
+##### How to highlight lines of code
+[https://github.com/gnab/remark/issues/115](https://github.com/gnab/remark/issues/115)
+more: [https://github.com/gnab/remark/issues/116](https://github.com/gnab/remark/issues/116)

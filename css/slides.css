@@ -1,0 +1,243 @@
+/* SLIDES */
+
+.remark-slide-content {
+  font-size: 3.4rem;
+}
+
+.remark-slide-content h4:first-child {
+  margin-top: 0;
+}
+
+.remark-slide-number {
+  font-size: 2.2rem;
+}
+
+.s {
+  padding: 5vh 15vw;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: column;
+}
+
+.s-top {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.s-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.s-center_left {
+  align-items: flex-start;
+}
+
+.s-center_row {
+  flex-direction: row;
+}
+
+.s-bottom {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.s-left {
+  align-items: flex-start;
+}
+
+.s-narrow {
+  padding: 5vh 20vw;
+  font-size: 3.4rem;
+}
+
+.s-wide {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.row_padding-none-horizontal .col:first-of-type {
+  padding-left: 0;
+}
+
+.col {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 20px 50px;
+  border-right: 3px double #777;
+}
+
+.col > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.col > h1, .col > h2, .col > h3 {
+  margin-bottom : 30px;
+}
+
+.col:last-of-type {
+  padding-right: 0;
+  border-right: 0;
+}
+
+/* doesn't look good with this, so leaving it
+.col:first-of-type {
+  padding-left: 0;
+} */
+
+.col-50 {
+  width: 50%;
+}
+
+.col-33 {
+  width: 33%;
+}
+
+.col-33 img {
+  width: 100%;
+}
+
+.col-70 {
+  width: 70%;
+}
+
+.col-60 {
+  width: 60%;
+}
+
+.col-40 {
+  width: 40%;
+}
+
+.col-30 {
+  width: 30%;
+}
+
+.s-image--source {
+  margin-bottom: -40px;
+  font-size: 1.5rem;
+}
+
+/* BACKGROUNDS */
+
+.s_background-cover {
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.s_background-fit {
+  background-size: fit !important;
+  background-position: center !important;
+}
+
+.s_background-20 {
+  background-size: auto 20% !important;
+}
+
+.s_background-25 {
+  background-size: auto 25% !important;
+}
+
+.s_background-30 {
+  background-size: auto 30% !important;
+}
+
+.s_background-35 {
+  background-size: auto 35% !important;
+}
+
+.s_background-40 {
+  background-size: auto 40% !important;
+}
+
+.s_background-50 {
+  background-size: auto 50% !important;
+}
+
+.s_background-bottom {
+  background-position: center bottom !important;
+}
+
+.s_background-bottom-with-padding {
+  background-position: center 95% !important;
+}
+
+.s_background-black {
+  background-color: black;
+  color: white;
+}
+
+.s_background-grey {
+  background-color: #333;
+  color: white;
+}
+
+.s_background-green {
+  background-color: #25991F;
+  color: #fff;
+}
+
+.s_background-green a {
+  color: #fff;
+}
+
+.s_background-blue {
+  background-color: #284EC8;
+  color: white;
+}
+
+.s_background-blue a {
+  color: #fff;
+}
+
+.s_background-yellow {
+  background: #F9DB3D;
+}
+
+.s_background-red {
+  background-color: #C82828;
+}
+
+.s--headline-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.s--headline-overlay h1 {
+  color: #fff;
+  text-decoration: none;
+  margin: 0;
+}
+
+.s_padding-none {
+  padding: 0
+}
+
+.s_padding-small {
+  padding: 2rem;
+}
+
+.s--overlay-container {
+  background: rgba(0,0,0, 0.85);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

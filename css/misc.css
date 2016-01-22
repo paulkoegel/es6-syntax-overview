@@ -1,0 +1,109 @@
+/* GENERIC SLIDES */
+
+.code-fullscreen {
+  padding: 10px;
+}
+
+.no-vertical-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.stripe {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 50%;
+  display: block;
+}
+.stripe--red {
+  background: #C82828;
+  left: 0;
+}
+.stripe--green {
+  background: #00B36B;
+  left: 0;
+}
+.stripe--blue {
+  background: #284EC8;
+  right: 0;
+}
+
+.railslove-heart {
+  width: 100px;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.vertical-title {
+  position: absolute;
+  top: 60px;
+  left: 80px;
+  font-size: 45px;
+  font-style: italic;
+  color: #999;
+}
+
+.vertical-source {
+  margin-top: -70px;
+  font-size: 4.5rem;
+}
+
+.vertical-source--normal {
+  margin-top: 0;
+  color: #ddd;
+  font-size: 3.5rem;
+}
+
+
+
+.large-code code {
+  font-size: 47px;
+}
+
+.vertical-center-medium ul, .vertical-center ul {
+  width: 100%;
+}
+
+.no-margin-top-p p {
+  margin-top: 0;
+}
+
+.large-list.large-list-center ul {
+  margin: 0 auto;
+}
+
+.large-list ul {
+  font-size: 4.5rem;
+  width: 70%;
+}
+.large-list ul li {
+  margin-bottom: 3rem;
+}
+
+.width-50, .width-50 img {
+  width: 50%;
+}
+
+.height-150 {
+  height: 150px;
+  width: 100%;
+}
+
+.width-100, .width-100 img {
+  width: 100%;
+}
+
+.no-padding-top {
+  padding-top: 0;
+}
+
+.contact {
+  font-size: 5.5rem;
+  margin-top: -35px;
+  margin-bottom: 35px;
+}

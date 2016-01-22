@@ -1,0 +1,124 @@
+/* styles only for this presentation, classes prefixed with `.c-` */
+
+.c-list > ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c-list > ul > li {
+  margin-bottom: 2rem;
+  line-height: 4rem;
+}
+
+.c-list_narrow > ul > li {
+  margin-bottom: 1rem;
+  line-height: 4rem;
+}
+
+.c-list > ul > li > ul > li {
+  font-size: 2.7rem;
+}
+.c-list > ul > li > ul > li:first-of-type {
+  margin-top: 1.5rem;
+}
+
+.c-title .remark-slide-number {
+  display: none;
+}
+
+.c-title--headline {
+  text-align: center;
+  flex-grow: 1; /* this pushed meta to the bottom */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.c-title--headline h1 {
+  font-size: 7rem;
+  line-height: 8rem;
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+.remark-presenter-mode .c-presentation-mode-note {
+  display: none;
+}
+.c-presentation-mode-note {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #8B0000;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.c-presentation-mode-note--close {
+  color: grey;
+}
+.c-presentation-mode-note--close:hover {
+  color: #fafafa;
+}
+
+.c-title--meta {
+  border-top: 3px double #555;
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.c-title--author {
+  color: #555;
+  font-size: 3.5rem;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+.c-title--links {
+  color: #555;
+  font-size: 2.5rem;
+}
+.c-title--links a {
+  text-decoration: none;
+}
+
+
+.c-inhalt--list ul {
+  margin-top: 10px;
+}
+
+.c-inhalt--list ul > li {
+  font-size: 3.1rem;
+}
+
+.c-inhalt--list ol > li {
+  font-size: 4rem;
+  margin-bottom: 2.5rem;
+}
+
+.c-inhalt--ol-with-counter ol {
+  counter-reset: item 1;
+}
+
+.c-inhalt--ol-with-counter ol > li {
+  display: block;
+}
+
+.c-inhalt--ol-with-counter ol > li:before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  margin-left: -45px;
+}
+
+.c-eich-quote {
+  font-size: 3.5rem;
+  line-height: 4.8rem;
+}
+
+.hljs-idea .hljs {
+  background-color: #F8F8F8;
+}

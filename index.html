@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ECMAScript 6</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+    <link rel='stylesheet' media='all' href='vendor/normalize.css' />
+    <link rel='stylesheet' media='all' href='css/base.css' />
+    <link rel='stylesheet' media='all' href='css/slides.css' />
+    <link rel='stylesheet' media='all' href='css/text.css' />
+    <link rel='stylesheet' media='all' href='css/utility.css' />
+    <link rel='stylesheet' media='all' href='css/misc.css' />
+    <link rel='stylesheet' media='all' href='css/custom.css' />
+    <link rel='shortcut icon' href='favicon.png' type='image/png' />
+  </head>
+
+  <body>
+    <script src='vendor/remark.0.13.0.js'></script>
+    <script type='text/javascript'>
+      var slideshow = remark.create({
+        sourceUrl: 'presentation.markdown',
+        highlightLanguage: 'javascript',
+        highlightStyle: 'idea',
+        highlightLines: true, // https://github.com/gnab/remark/wiki/Configuration
+        highlightSpans: true,
+        navigation: {
+          scroll: false
+        },
+
+        ratio: '16:9'//,
+        //slideNumberFormat: ''
+        });
+      // var presentationNoteClass = 'c-presentation-mode-note';
+      // var makePresentationNote = function() {
+      //   var presentationNote = document.createElement('div');
+      //   presentationNote.innerHTML = "'p' drücken, um Präsentationsnotizen ein-/auszublenden <span class='c-presentation-mode-note--close'>&#10006;</span>";
+      //   presentationNote.className = 'c-presentation-mode-note';
+      //   presentationNote.onclick = function() {
+      //     var notes = document.getElementsByClassName(presentationNoteClass);
+      //     for(var j = 0; j < notes.length; j++) {
+      //       notes[j].style.display = 'none';
+      //     }
+      //   }
+      //   return presentationNote;
+      // };
+      // var slides = document.getElementsByClassName('remark-slide');
+      // for(var i = 0; i < slides.length; i++) {
+      //   slides[i].appendChild(makePresentationNote());
+      // }
+    </script>
+  </body>
+
+</html>

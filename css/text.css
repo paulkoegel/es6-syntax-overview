@@ -1,0 +1,105 @@
+.white-text {
+  color: white;
+}
+
+.text-tiny {
+  font-size: 1rem;
+}
+
+.text-mini {
+  font-size: 2rem;
+}
+
+.text-smallest {
+  font-size: 2.5rem;
+}
+
+.text-smaller {
+  font-size: 2.75rem;
+}
+
+.text-small {
+  font-size: 3rem;
+}
+
+.text-medium-small {
+  font-size: 3.5rem;
+}
+
+.text-medium {
+  font-size: 4rem;
+}
+
+.text-large {
+  font-size: 5rem;
+}
+
+.text-strikethrough {
+  text-decoration: line-through;
+}
+
+.text-grey {
+  color: #777;
+}
+
+.text-light-grey {
+  color: #ccc;
+}
+
+.text-grey-inherit, .text-grey-inherit * {
+  color: #777;
+}
+
+.text-green {
+  color: #00B36B;
+}
+.text-blue {
+  color: #284EC8;
+}
+.text-red {
+  color: #C82828;
+}
+.text-white {
+  color: #fff;
+}
+
+.text-undecorated, .text-undecorated > * {
+  text-decoration: none;
+}
+
+.text-quote {
+  font-family: 'droid serif';
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-normal, .text-normal > * {
+  font-decoration: none;
+  font-weight: normal;
+}
+
+.text-background-translucent-yellow {
+  /* rgb(255, 103, 0) */
+  background-color: rgba(255, 255, 0, 0.8);
+}
+
+.text-background-translucent-white {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.text-code_medium {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.text-code_medium .remark-code {
+  font-size: 2.75rem;
+}
+
+.text-code_small .remark-code {
+  font-size: 2.15rem;
+}
