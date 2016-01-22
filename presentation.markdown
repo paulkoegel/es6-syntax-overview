@@ -12,7 +12,6 @@ January 2016
 
 class: s s-center s-center_left s-narrow
 
-
 .u-center[
 # Aim
 ]
@@ -118,7 +117,7 @@ background-image: url(images/es6-compatibility.png)
 
 class: s s-center
 
-## Template strings for interpolation
+### Template strings for interpolation
 
 ```javascript
 let firstName = 'Peter';
@@ -135,7 +134,7 @@ firstName + ' ' + lastName;
 
 ---
 
-class: s s-top s-wide
+class: s s-center s-wide
 
 ## `let`: local variables with block scope
 
@@ -149,11 +148,11 @@ class: s s-top s-wide
 var outer = 'Hello';
 
 if(true) {
-*  var inner = outer;
+  ±var± inner = outer;
 }
 
 console.log(inner === outer);
-*// true
+// ±true±
 ```]
 ]
 
@@ -166,15 +165,18 @@ console.log(inner === outer);
 let outer = 'Hello';
 
 if(true) {
-*  let inner = outer;
+  ±let± inner = outer;
 }
 
 console.log(inner === outer);
-*// ReferenceError:
+// ±ReferenceError:±
 // inner is not defined
 ```]
 ]
 ]
+
+???
++ `let` uses block scope
 
 ---
 
@@ -186,9 +188,16 @@ class: s s-center
 *const PI = 3.14159;
 
 PI = 4;
-// "PI" is read-only
+// fails silently
+
+const PI = 4;
+*// TypeError: redeclaration of const PI
 
 ```
+
+???
++ **`PI=4`** fails silently in Chrome and Firefox, reassignment in Babel REPL and Safari :(
++ **`const PI=4`**: no error in Babel REPL since it's converted to `var PI=3.14`
 
 ---
 
@@ -230,7 +239,7 @@ class: s s-center s-wide
 ### ES5
 ]
 .text-code_medium[
-```
+```javascript
 var name = ±function(f, l)± {
   return f + ' ' + l;
 };
@@ -241,61 +250,138 @@ var name = ±function(f, l)± {
 .text-center[
 ### ES6
 ]
+
 .text-code_medium[
-```
-let name = `(f, l) =>` {
+```javascript
+let name = ±(f, l) =>± {
   return `${first} ${last}`;
 }
-```]
-]
-]
+```
+]]]
 
 ---
 
 class: s s-center s-wide
 
-## Arrow Functions: Shorthand
+.text-smallest[Arrow Functions]
+## Shorthand
 
-```
+```javascript
 // concise syntax, implied "return"
-let func = `x => x * x`;
+let func = ±x => x * x±;
 
 
 // with block body, explicit "return" needed
-let func = (x, y) => { return x + y; };
+let func = ±(x, y) => {± return x + y; ±}±;
 ```
+
+---
+
+class: s s-wide s-center
+
+# Default Parameters
+
+.text-code_medium[
+```javascript
+let myFunc = (a, ±b=1±) => {
+  console.log(a, b);
+};
+
+myFunc('Hello'); // => 'Hello', 1
+
+myFunc(99, 2);   // => 99, 2
+```
+]
 
 ---
 
 class: s s-center
 
-## Arrow Functions
+# Variadic Functions
 
-+ lexically bind the `this` value (does not bind its own `this`, arguments)
-+ cannot be called with `new`.
-+ have no `arguments`.
+.text-code_medium[
+```javascript
+const myFunc = (first, ±...rest±) => {
+  console.log(first, rest);
+}
+
+myFunc(1, 2, '3'); // => 1 [2, '3']
+```
+]
 
 ---
 
-class: s s-top
+class: s s-center
 
-## Pfeilfunktionen auf Objekten
-.u-no-margin-vertical[
-`this` ist automatisch richtig gesetzt!
-]
+.text-smaller[Arrow Functions]
+## Syntax in Objects
 
 .text-code_medium[
-```
-// ES6
+```javascript
 let car = {
-   drivers: ['Anna', 'Bob'],
-   logDrivers() {
-      this.drivers.forEach((driver) => {
-*       console.log(`${driver}`);
-      });
-   }
+
+  ±drive()± {
+    // ...
+  }±,±
+
+  driver: 'Bob'
 };
 ```
+]
+
+???
++ **no arrow**, but a **comma** (keep in mind for classes)
+
+---
+
+class: s s-center s-wide
+
+.text-smaller[Arrow Functions]
+## `this`
+
+.row[
+.col.col-50.u-no-padding-horizontal[
+.text-center.u-no-margin[
+### ES5
+]
+.text-code_medium[
+```javascript
+function Person() {
+  this.age = 0;
+
+  setInterval(function() {
+    ±this±.age++; // ±window±
+  }, 1000);
+}
+
+var p = new Person();
+// p's age ±doesn't change±,
+// is always 0
+```
+]
+]
+
+.col.col-50.u-no-padding-horizontal[
+.text-center.u-no-margin[
+### ES6
+]
+.text-code_medium[
+```
+function Person() {
+  this.age = 0;
+
+  setInterval(±() =>± {
+    ±this±.age++; // ±instance±
+  }, 1000);
+}
+
+var p = new Person();
+// p's age ±does change±
+// every second
+
+```
+]
+]
 ]
 
 ???
@@ -303,17 +389,17 @@ let car = {
 
 ---
 
-class: s s-wide s-center
+class: s s-center
 
-#Default Parameters
+.text-smaller[Summary]
+## Arrow Functions
 
-.text-code_medium[
-```javascript
-let func = `(a=1)` => {
-  console.log(a);
-};
-```
-]
++ **shorter syntax**
++ **lexical this** - do not bind their own `this`
+
++ are strictly anonymous (no .u-strikethrough[```myFunc (x) => { ... }```])
++ have no `arguments` (use rest arguments `...rest` instead)
++ cannot be called with `new`
 
 ---
 
