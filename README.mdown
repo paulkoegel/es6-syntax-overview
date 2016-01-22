@@ -2,7 +2,7 @@ ECMAScript 6
 ============
 
 #### Start Slideshow
-[https://paulkogel.github.io/es6](https://paulkogel.github.io/es6)
+[https://paulkogel.github.io/es6](https://paulkogel.github.io/es6-syntax-overview)
 
 Built with [Remark.js](https://github.com/gnab/remark).
 
