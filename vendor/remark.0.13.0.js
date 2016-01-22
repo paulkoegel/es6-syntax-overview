@@ -17227,7 +17227,7 @@ function highlightBlockLines (block, lines) {
 }
 
 function highlightBlockSpans (block) {
-  var pattern = /([^`])`([^`]+?)`/g ;
+  var pattern = /([^±])?±([^±]+?)±/g ;
 
   block.childNodes.forEach(function (element) {
     element.innerHTML = element.innerHTML.replace(pattern,
@@ -17235,7 +17235,7 @@ function highlightBlockSpans (block) {
         if (e === '\\') {
           return m.substr(1);
         }
-        return e + '<span class="remark-code-span-highlighted">' +
+        return (e || '') + '<span class="remark-code-span-highlighted">' +
           c + '</span>';
       });
   });
