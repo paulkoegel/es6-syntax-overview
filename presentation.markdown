@@ -2,8 +2,7 @@ class: s s-center c-title
 background-image: url(images/escher-spiral-cropped.jpg)
 
 .c-title--headline[
-# ECMAScript 6
-### The latest version of JavaScript
+# An ECMAScript 6 Syntax Primer
 
 January 2016
 ]
@@ -15,37 +14,44 @@ class: s s-center s-center_left s-narrow
 .u-center[
 # Aim
 ]
-+ enable you to read ES6 syntax - the new _lingua franca_ of the JavaScript community
-+ introduce new and upcoming JavaScript features
++ enable you to **read ES6** syntax &ndash; the new _lingua franca_ of the JavaScript community
++ introduce **new and upcoming features**
+
+---
+
+# Topics
++ Overview of ES6
++ Babel
 
 ---
 
 class: s s-center s-center_left
 
 #### JavaScript
-+ colloquially: "the language"
++ colloquially: **"the language"**
 + strictly speaking: name of Mozilla's implementation
 
 #### ECMAScript
 + European Computer Manufacturers Association (standards organisation)
-+ the standard & official name of the language
-+ "versions of JavaScript"
++ the **standard** & official name of the language
++ **"versions of JavaScript"**
 
 #### TC39
 + ECMA Technical Committee 39
-+ defines standard
++ defines the standard
 + browser vendors & experts
 
 ???
++ Terminology / Nomenclature
 + ECMA is similar to ISO
 
 ---
 
 class: s s-center s-center_left
 
-##### ES3 (2008)
-+ most JS code today
-+ Clojure- & CoffeeScript compile to ES3
+##### ES3 <span class='u-unbold text-smallest'>(2008)</span>
+  -  most JS code today
+  - Clojure- & CoffeeScript compile to ES3
 
 .u-margin-bottom-20.u-strikethrough[
 ##### ES4
@@ -57,18 +63,23 @@ class: s s-center s-center_left
 
 .u-margin-bottom-20[
 ##### ES6 / ES2015 <span class='u-unbold text-smallest'>(June 2015)</span>
+  - [www.ecma-international.org/ecma-262/6.0](http://www.ecma-international.org/ecma-262/6.0)
 ]
 
-.u-margin-bottom-20[
+.u-margin-bottom-20.text-grey[
 ##### ES7 / ES2016
 ]
 
-##### ES Harmony
-+ ES6 & 7
+.u-margin-top-20[
+.u-margin-top-20[
+##### <span class='text-green'>ES Harmony</span>
+  - ES6 & 7
+]]
 
 ???
 + There is no **ES4** - never finalized and hence discarded.
 + ES5 is well supported (IE9+)
++ Harmony: used to be a Babel compiler flag and you might come across it
 
 ---
 
@@ -80,7 +91,7 @@ class: s s-center s-center_left s-narrow
 
 + JS is being used for more than it's been designed, it has become **dangerous**
 + no proper standard library &rArr; **new syntax** and features
-+ **standardization**/harmonization of promises, modules, classes etc.
++ **harmonization** of promises, modules, classes etc.
 + fully **backwards-compatible** &ndash; ES6 only adds features
 + six years in the making &ndash; had to be careful not to introduce new pitfalls
 
@@ -112,25 +123,6 @@ background-image: url(images/es6-compatibility.png)
 + .grey[
 [https://kangax.github.io/compat-table/es6](https://kangax.github.io/compat-table/es6)
 ]
-
----
-
-class: s s-center
-
-### Template strings for interpolation
-
-```javascript
-let firstName = 'Peter';
-let lastName = 'Parker';
-
-// ES5
-firstName + ' ' + lastName;
-// 'Peter Parker'
-
-// ES6
-*`${firstName} ${lastName}`
-// 'Peter Parker'
-```
 
 ---
 
@@ -180,7 +172,32 @@ console.log(inner === outer);
 
 ---
 
-class: s s-center
+class: s s-center s-wide
+
+## `let` is safer: no more Hoisting
+
+.text-code_medium[
+```javascript
+±var snack± = 'Meow Mix';
+
+function getFood(food) {
+  if (food) {
+    ±var snack± = 'Friskies';
+    return snack;
+  }
+  return snack;
+}
+
+getFood(false); // ±undefined±
+```
+]
+
+???
++ even if `return snack` stood in the first line of `getFood` it would be undefined - declaration is hoisted to the beginning of the function body.
+
+---
+
+class: s s-center s-wide
 
 ## `const`: constants with block scope
 
@@ -203,8 +220,9 @@ const PI = 4;
 
 class: s s-center s-wide
 
-# `const`
+## `const`
 
+.text-code_medium[
 ```javascript
 const settings = {
   url: "https://example.com"
@@ -214,18 +232,36 @@ settings = {}; // ERROR
 
 *settings.url = "https://evil.com"; // NO error
 ```
-
-<br>
-.u-width-70[
-+ "Creates a read-only reference to a value. It does not mean the value it holds is immutable" (MDN)
-+ The part that's constant is the reference to an object stored within the constant variable, not the object itself.
-+ More: [https://blog.mariusschulz.com/2015/12/31/constant-variables-in-javascript-or-when-const-isnt-constant](https://blog.mariusschulz.com/2015/12/31/constant-variables-in-javascript-or-when-const-isnt-constant)
 ]
 
 ???
++ "Creates a read-only reference to a value. It does not mean the value it holds is immutable" (MDN)
++ The part that's constant is the reference to an object stored within the constant variable, not the object itself.
 
+.text-grey[
 + "If a primitive value (such as a string, number, or boolean value) is assigned to a constant variable, that variable will be a true constant. Our PI constant is an example for this. There's no way to modify the value of the numeric literal 3.141592653589793 after it has been assigned."
 + use `Object.freeze` (shallow) or immutable.js/mori to make objects immutable.
++ More: [https://blog.mariusschulz.com/2015/12/31/constant-variables-in-javascript-or-when-const-isnt-constant](https://blog.mariusschulz.com/2015/12/31/constant-variables-in-javascript-or-when-const-isnt-constant)
+]
+
+---
+
+class: s s-center
+
+### Template Strings: Interpolation
+
+```javascript
+let firstName = 'Peter';
+let lastName = 'Parker';
+
+// ES5
+firstName + ' ' + lastName;
+// 'Peter Parker'
+
+// ES6
+*`${firstName} ${lastName}`
+// 'Peter Parker'
+```
 
 ---
 
@@ -236,19 +272,24 @@ class: s s-center s-wide
 .row[
 .col.col-50.u-no-padding-horizontal[
 .text-center[
-### ES5
+#### ES5
 ]
 .text-code_medium[
 ```javascript
 var name = ±function(f, l)± {
   return f + ' ' + l;
 };
+
+
+±function hello()± {
+  // ...
+}
 ```]
 ]
 
 .col.col-50.u-no-padding-horizontal[
 .text-center[
-### ES6
+#### ES6
 ]
 
 .text-code_medium[
@@ -256,30 +297,142 @@ var name = ±function(f, l)± {
 let name = ±(f, l) =>± {
   return `${first} ${last}`;
 }
+
+
+±function hello()± {
+  // ...
+}
 ```
 ]]]
+
+???
++ arrow functions are **always anonymous**
+
+---
+
+class: s s-center
+
+.text-smallest[Arrow Functions]
+## Shorthand
+
+.u-width-100.text-left[
+  .text-smallest[One argument, single line body, implied `return`:]]
+.text-code_medium.u-width-100[
+```javascript
+let func = ±x => x * x±;
+```
+]
+
+.u-width-100.text-left[ 
+.text-smallest[Block body requires `return`:]]
+.text-code_medium.u-width-100[
+```javascript
+let func = (x) => ±{ return± x * x; ±}±;
+```
+]
+
+.u-width-100.text-left[ 
+.text-smallest[No argument:]]
+.text-code_medium.u-width-100[
+```javascript
+let func = ±()± => 55;
+```
+]
+
+???
++ no parens for single argument
++ empty parens required for no argument
+
 
 ---
 
 class: s s-center s-wide
 
 .text-smallest[Arrow Functions]
-## Shorthand
+## As Object Methods
 
+.text-code_medium[
 ```javascript
-// concise syntax, implied "return"
-let func = ±x => x * x±;
+let car = {
 
+  ±drive()± { // ±shorthand without arrow±
+    // ...
+  },
 
-// with block body, explicit "return" needed
-let func = ±(x, y) => {± return x + y; ±}±;
+  ±stop: () => {± // rarely used
+    // ...
+  }
+
+};
 ```
+]
+
+???
++ syntax modeled after ES5 [getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get) and [setter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set) functions
+
+---
+
+class: s s-center s-wide
+
+## .text-smaller[Arrow Functions:] `this`
+
+.row[
+.col.col-50.u-no-padding-horizontal[
+.text-center.u-no-margin[
+#### ES5
+]
+.text-code_small[
+```javascript
+var person = {
+  age: 0,
+
+  growOld: function() {
+    this; // person
+    setInterval(±function()± {
+      ±this±.age++; // window
+    }, 1000);
+  }
+};
+
+person.growOld();
+// age ±doesn't change±, remains 0
+```
+]
+]
+
+.col.col-50.u-no-padding-horizontal[
+.text-center.u-no-margin[
+#### ES6
+]
+.text-code_small[
+```
+let person = {
+  age: 0,
+
+  growOld: function() {
+    this; // person
+    setInterval(±() =>± {
+      ±this±.age++; // person
+    }, 1000);
+  }
+};
+
+person.growOld();
+// age ±changes± every second
+
+```
+]
+]
+]
+
+???
++ in ES5 müsste `this` vorher in `self` oder `that` gespeichert werden.
 
 ---
 
 class: s s-wide s-center
 
-# Default Parameters
+## Default Parameters
 
 .text-code_medium[
 ```javascript
@@ -297,7 +450,7 @@ myFunc(99, 2);   // => 99, 2
 
 class: s s-center
 
-# Variadic Functions
+## Variadic Functions
 
 .text-code_medium[
 ```javascript
@@ -309,83 +462,11 @@ myFunc(1, 2, '3'); // => 1 [2, '3']
 ```
 ]
 
----
-
-class: s s-center
-
-.text-smaller[Arrow Functions]
-## Syntax in Objects
-
-.text-code_medium[
-```javascript
-let car = {
-
-  ±drive()± {
-    // ...
-  }±,±
-
-  driver: 'Bob'
-};
-```
-]
+<br>
++ `...` is called the **spread operator**
++ arrow functions have no `arguments`
 
 ???
-+ **no arrow**, but a **comma** (keep in mind for classes)
-
----
-
-class: s s-center s-wide
-
-.text-smaller[Arrow Functions]
-## `this`
-
-.row[
-.col.col-50.u-no-padding-horizontal[
-.text-center.u-no-margin[
-### ES5
-]
-.text-code_medium[
-```javascript
-function Person() {
-  this.age = 0;
-
-  setInterval(function() {
-    ±this±.age++; // ±window±
-  }, 1000);
-}
-
-var p = new Person();
-// p's age ±doesn't change±,
-// is always 0
-```
-]
-]
-
-.col.col-50.u-no-padding-horizontal[
-.text-center.u-no-margin[
-### ES6
-]
-.text-code_medium[
-```
-function Person() {
-  this.age = 0;
-
-  setInterval(±() =>± {
-    ±this±.age++; // ±instance±
-  }, 1000);
-}
-
-var p = new Person();
-// p's age ±does change±
-// every second
-
-```
-]
-]
-]
-
-???
-+ in ES5 müsste `this` vorher in `self` oder `that` gespeichert werden.
 
 ---
 
@@ -395,11 +476,26 @@ class: s s-center
 ## Arrow Functions
 
 + **shorter syntax**
-+ **lexical this** - do not bind their own `this`
++ **lexical `this`** - do not bind their own `this`
 
++ must type `()` when there are no arguments.
 + are strictly anonymous (no .u-strikethrough[```myFunc (x) => { ... }```])
 + have no `arguments` (use rest arguments `...rest` instead)
 + cannot be called with `new`
+
+???
++ `()` cannot be left out.
+
+---
+
+class: s s-center
+
+### `let` & Arrow Functions
+
++ should be used instead of `var` and `function`
++ make JavaScript code safer:
+  - `let`: no more hoisting with `let`
+  - arrow functions: less error-prone thanks to lexical `this`
 
 ---
 
@@ -420,6 +516,54 @@ let myVehicle = new Vehicle('rocky');
 ```
 
 ---
+
+class: s s-center s-wide
+
+.text-smaller[Arrow Functions]
+.u-no-margin-top[
+### Arrow Functions in Objects -vs- in Classes
+]
+
+.row[
+.col.col-50.u-no-padding-horizontal[
+.text-code_medium[
+```javascript
+let car = {
+
+  ±drive()± {
+    // ...
+  }±,± // comma
+
+  stop() {
+    // ...
+  }
+};
+```
+]]
+
+.col.col-50.u-no-padding-horizontal[
+.text-code_medium[
+```javascript
+class Car {
+
+  drive() {
+    // ...
+  ±}± // ±NO COMMA±
+
+  stop() {
+    // ...
+  }
+};
+```
+]]
+]
+
+???
++ **no arrow**, but a **comma** (keep in mind for classes)
++ commas: https://hacks.mozilla.org/2015/07/es6-in-depth-classes/comment-page-1/#comment-18014
+
+---
+
 
 # Vererbung
 
@@ -682,3 +826,14 @@ paul@railslove.com
 + ES6 adds well-signposted paths (e.g. `let`), but you can still run into hoisting problems when you follow an older path - by using `var` instead.
 
 + leather gloves, Waffe, safest: use a compile-to-JS language
+
+---
+
+ESLint
+AirBnB Styleguide
+
+https://leanpub.com/understandinges6/
+http://exploringjs.com/
+http://www.2ality.com/
+http://javascriptweekly.com/
+https://github.com/lukehoban/es6features#readme

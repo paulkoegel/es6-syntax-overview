@@ -86,7 +86,8 @@ ul ul {
 
 
 li {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
+  line-height: 3.5rem;
 }
 
 .remark-code {
@@ -158,7 +159,11 @@ iframe {
 
 .remark-code-line-highlighted {
   /* rgb(255, 103, 0) */
-  background-color: rgba(255, 255, 0, 0.8);
+  background-color: rgba(255, 255, 0, 1);
+}
+/* highlight of only a section of a line of code ±...± */
+.remark-code-span-highlighted {
+  background-color: rgba(255, 255, 0, 1);
 }
 
 .remark-notes-area .remark-bottom-area .remark-notes-preview-area .remark-notes-preview {

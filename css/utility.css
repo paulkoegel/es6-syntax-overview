@@ -51,6 +51,10 @@
   margin-right: 0;
 }
 
+.u-no-margin-top > * {
+  margin-top: 0
+}
+
 .u-margin-top-20 {
   margin-top: 2rem;
 }

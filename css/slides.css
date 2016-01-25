@@ -76,7 +76,7 @@
   justify-content: flex-start;
   flex-direction: column;
   padding: 20px 50px;
-  border-right: 3px double #777;
+  border-right: 2px solid #777;
 }
 
 .col > * {
@@ -241,3 +241,19 @@
   align-items: center;
   flex-direction: column;
 }
+
+/* animate slide transitions - see http://www.partage-it.com/animez-vos-presentations-remark-js/ */
+/* .remark-fading { */
+/* 	z-index: 9; */
+/* } */
+/*  */
+/* .remark-slide-container { */
+/* 	transition: opacity 80ms linear; */
+/* 	opacity: 0; */
+/* 	//right: 1000px; */
+/* } */
+/* .remark-visible { */
+/* 	//transition: opacity 1s linear; */
+/* 	opacity: 1; */
+/* 	//right: 0px; */
+/* } */
