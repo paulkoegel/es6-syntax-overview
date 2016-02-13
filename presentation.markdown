@@ -372,6 +372,13 @@ let car = {
 
 ---
 
+class: s s-center
+
+implicit returns:
+[http://stackoverflow.com/a/28889451](http://stackoverflow.com/a/28889451)
+
+---
+
 class: s s-center s-wide
 
 ## .text-smaller[Arrow Functions:] `this`
